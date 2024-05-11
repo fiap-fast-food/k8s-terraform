@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "terraform-state-fiap-food"
-    key    = "Prod/terraform.tfstate"
+    bucket = "fv-fiap-food"
+    key    = "fiap-food-state.tfstate"
     region = "us-east-2"
   }
 }
