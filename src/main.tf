@@ -54,4 +54,21 @@ module "eks" {
 
   tags = var.aws_project_tags
 }
+resource "kubernetes_service" "load_balancer" {
+  metadata {
+    name = "load-balancer-fiap-food-api"
+  }
 
+  spec {
+    selector = {
+      app = "fiap-food-api"
+    }
+
+    port {
+      port        = 80
+      target_port = 80
+    }
+
+    type = "LoadBalancer"
+  }
+}
