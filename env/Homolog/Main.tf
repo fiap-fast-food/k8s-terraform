@@ -1,7 +1,7 @@
 module "prod" {
     source = "../../infra"
     
-    cluster_name = "homolog2"
+    cluster_name = "fiap-food-api"
     region = "us-east-2"
 }
 
