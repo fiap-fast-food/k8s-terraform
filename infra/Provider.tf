@@ -29,7 +29,7 @@ resource "kubernetes_service" "LoadBalancer" {
   }
   spec {
     selector = {
-      nome = "java"
+      nome = "fiap-food-api"
     }
     port {
       port = 8000
