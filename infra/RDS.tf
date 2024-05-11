@@ -1,6 +1,6 @@
 resource "aws_db_instance" "default" {
   allocated_storage    = 10
-  db_name              = "root"
+  db_name              = "fiapfastfood"
   engine               = "postgres"
   instance_class       = "db.t3.micro"
   username             = "postgres"
