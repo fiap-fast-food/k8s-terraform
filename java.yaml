@@ -31,6 +31,16 @@ spec:
                secretKeyRef:
                  name: datasource_password
                  key: PASSWORD
+            - name: DB_PORT
+              valueFrom:
+               secretKeyRef:
+                 name: dbport
+                 key: DBPORT
+            - name: DB_NAME
+              valueFrom:
+               secretKeyRef:
+                 name: dbname
+                 key: DBNAME                  
             - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
               valueFrom:
                secretKeyRef:
