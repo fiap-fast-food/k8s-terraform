@@ -25,11 +25,11 @@ provider "kubernetes" {
 
 resource "kubernetes_service" "LoadBalancer" {
   metadata {
-    name = "load-balancer-go-api"
+    name = "load-balancer-fiap-food-api"
   }
   spec {
     selector = {
-      nome = "go"
+      nome = "java"
     }
     port {
       port = 8000
