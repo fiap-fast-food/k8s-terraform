@@ -23,18 +23,18 @@ provider "kubernetes" {
   }
 }
 
-resource "kubernetes_service" "LoadBalancer" {
-  metadata {
-    name = "load-balancer-fiap-food-api"
-  }
-  spec {
-    selector = {
-      nome = "fiap-food-api"
-    }
-    port {
-      port = 8000
-      target_port = 8000
-    }
-    type = "LoadBalancer"
-  }
-}
+#resource "kubernetes_service" "LoadBalancer" {
+ # metadata {
+ #   name = "load-balancer-fiap-food-api"
+  #}
+#   spec {
+#     selector = {
+#       nome = "fiap-food-api"
+#     }
+#     port {
+#       port = 8000
+#       target_port = 8000
+#     }
+#     type = "LoadBalancer"
+#   }
+# }
