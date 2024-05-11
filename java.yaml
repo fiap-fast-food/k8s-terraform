@@ -15,6 +15,32 @@ spec:
           image: fiapfastfood/fiap-api
           ports:
             - containerPort: 80
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+               secretKeyRef:
+                 name: datasource_url
+                 key: HOST
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+               secretKeyRef:
+                 name: datasource_username
+                 key: USER 
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+               secretKeyRef:
+                 name: datasource_password
+                 key: PASSWORD
+            - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+              valueFrom:
+               secretKeyRef:
+                 name: datasource_driver_class_name
+                 key: DRIVER_CLASS_NAME
+            - name: API_PAYMENT_URL
+              valueFrom:
+               secretKeyRef:
+                 name: api_payment
+                 key: HOST_API_PAYMENT                     
           livenessProbe:
             httpGet:
               path: /swagger-ui/index.html
