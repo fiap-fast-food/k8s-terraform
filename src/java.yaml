@@ -19,17 +19,17 @@ spec:
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                secretKeyRef:
-                 name: datasource_url
+                 name: datasource-url
                  key: HOST
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                secretKeyRef:
-                 name: datasource_username
+                 name: datasource-username
                  key: USER 
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
                secretKeyRef:
-                 name: datasource_password
+                 name: datasource-password
                  key: PASSWORD
             - name: DB_PORT
               valueFrom:
@@ -44,12 +44,12 @@ spec:
             - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
               valueFrom:
                secretKeyRef:
-                 name: datasource_driver_class_name
+                 name: datasource-driver-class-name
                  key: DRIVER_CLASS_NAME
             - name: API_PAYMENT_URL
               valueFrom:
                secretKeyRef:
-                 name: api_payment
+                 name: api-payment
                  key: HOST_API_PAYMENT                     
           livenessProbe:
             httpGet:
