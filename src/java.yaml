@@ -45,12 +45,12 @@ spec:
               valueFrom:
                secretKeyRef:
                  name: datasource-driver-class-name
-                 key: DRIVER_CLASS_NAME
-            - name: API_PAYMENT_URL
+                 key: DRIVER-CLASS-NAME
+            - name: API-PAYMENT-URL
               valueFrom:
                secretKeyRef:
                  name: api-payment
-                 key: HOST_API_PAYMENT                     
+                 key: HOST-API-PAYMENT                     
           livenessProbe:
             httpGet:
               path: /swagger-ui/index.html
