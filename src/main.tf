@@ -12,7 +12,6 @@ module "vpc" {
   enable_nat_gateway = true
   enable_vpn_gateway = true
 
-
   tags = merge(var.aws_project_tags, { "kubernetes.io/cluster/${var.aws_eks_name}" = "shared" })
 
   public_subnet_tags = {
@@ -24,12 +23,11 @@ module "vpc" {
     "kubernetes.io/cluster/${var.aws_eks_name}" = "shared"
     "kubernetes.io/role/internal-elb"           = 1
   }
-
 }
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.10.0"
+  version = "20.8.5"
 
   cluster_name    = var.aws_eks_name
   cluster_version = var.aws_eks_version
@@ -43,32 +41,13 @@ module "eks" {
 
   eks_managed_node_groups = {
     default = {
-      min_size       = 1
-      max_size       = 1
-      desired_size   = 1
-      instance_types = var.aws_eks_maneged_node_groups_instance_types
-
-      tags = var.aws_project_tags
+      min_size       = 2
+      max_size       = 2
+      desired_size   = 2
+      instance_types = var.aws_eks_managed_node_groups_instance_types
+      tags           = var.aws_project_tags
     }
   }
 
   tags = var.aws_project_tags
-}
-resource "kubernetes_service" "load_balancer" {
-  metadata {
-    name = "load-balancer-fiap-food-api"
-  }
-
-  spec {
-    selector = {
-      app = "fiap-food-api"
-    }
-
-    port {
-      port        = 80
-      target_port = 80
-    }
-
-    type = "LoadBalancer"
-  }
 }

@@ -5,56 +5,55 @@ variable "aws_region" {
 }
 
 variable "aws_vpc_name" {
-  description = "nome da vpc criada na AWS"
+  description = "Colocar sempre a descrição"
   type        = string
   nullable    = false
 }
 
 variable "aws_vpc_cidr" {
-  description = "nome da cidr criada na AWS"
+  description = "Colocar sempre a descrição"
   type        = string
   nullable    = false
 }
 
 variable "aws_vpc_azs" {
-  description = "zonas de disponibilidades na AWS"
+  description = "Colocar sempre a descrição"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_vpc_private_subnets" {
-  description = "privates subnets na AWS"
+  description = "Colocar sempre a descrição"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_vpc_public_subnets" {
-  description = "public subnets na AWS"
+  description = "Colocar sempre a descrição"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_eks_name" {
-  description = "nome do cluster na EKS"
+  description = "Colocar sempre a descrição"
   type        = string
   nullable    = false
 }
 
 variable "aws_eks_version" {
-  description = "versao do eks na AWS"
+  description = "Colocar sempre a descrição"
   type        = string
   nullable    = false
 }
 
-variable "aws_eks_maneged_node_groups_instance_types" {
-  description = "maneged node groups na AWS"
+variable "aws_eks_managed_node_groups_instance_types" {
+  description = "Colocar sempre a descrição"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_project_tags" {
-  description = "tags na aws"
+  description = "Colocar sempre a descrição"
   type        = map(any)
   nullable    = false
 }
-
