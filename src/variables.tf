@@ -17,43 +17,43 @@ variable "aws_vpc_cidr" {
 }
 
 variable "aws_vpc_azs" {
-  description = "colcoar comentario"
+  description = "zonas de disponibilidades na AWS"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_vpc_private_subnets" {
-  description = "colcoar comentario"
+  description = "privates subnets na AWS"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_vpc_public_subnets" {
-  description = "colcoar comentario"
+  description = "public subnets na AWS"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_eks_name" {
-  description = "colcoar comentario"
+  description = "nome do cluster na EKS"
   type        = string
   nullable    = false
 }
 
 variable "aws_eks_version" {
-  description = "colcoar comentario"
+  description = "versao do eks na AWS"
   type        = string
   nullable    = false
 }
 
 variable "aws_eks_maneged_node_groups_instance_types" {
-  description = "colcoar comentario"
+  description = "maneged node groups na AWS"
   type        = set(string)
   nullable    = false
 }
 
 variable "aws_project_tags" {
-  description = "colcoar comentario"
+  description = "tags na aws"
   type        = map(any)
   nullable    = false
 }
